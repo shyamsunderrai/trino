@@ -9,11 +9,10 @@ metadata:
 spec:
   ports:
   - name: 32766-8080
-    port: 32766
+    nodePort: 32766
+    port: 8080
     protocol: TCP
     targetPort: 8080
   selector:
     app: trino
   type: NodePort
-status:
-  loadBalancer: {}
