@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: trino
+  name: trinosvc
+  namespace: trino
+spec:
+  ports:
+  - name: 32766-8080
+    port: 32766
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: trino
+  type: NodePort
+status:
+  loadBalancer: {}
